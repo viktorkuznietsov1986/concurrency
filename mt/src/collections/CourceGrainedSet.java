@@ -33,7 +33,7 @@ public class CourceGrainedSet<T> implements Set<T> {
 			Node prev = head;
 			
 			while (curr != tail) {
-				if (curr.data.hashCode() == element.hashCode()) {
+				if (curr.data.equals(element)) {
 					return false;
 				}
 				
