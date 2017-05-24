@@ -34,7 +34,11 @@ public class LockFreeSet<T> implements Set<T> {
 			curr = prev.next.getReference();
 			
 			while (true) {
-				succ = curr.next.getReference();
+				if (curr == tail) {
+					return new Window(prev, curr);
+				}
+				
+				succ = curr.next.get(marked);
 				
 				while (marked[0]) {
 					snip = prev.next.compareAndSet(curr, succ, false, false);
@@ -47,7 +51,7 @@ public class LockFreeSet<T> implements Set<T> {
 					succ = curr.next.get(marked);
 				}
 				
-				if (comparator.compare(curr.data, key) >= 1) {
+				if (comparator.compare(curr.data, key) >= 0) {
 					return new Window(prev, curr);
 				}
 				
@@ -73,7 +77,7 @@ public class LockFreeSet<T> implements Set<T> {
 			Node prev = window.prev;
 			Node curr = window.curr;
 			
-			if (curr.data.equals(element)) {
+			if (curr != tail && curr.data.equals(element)) {
 				return false;
 			}
 			else {
@@ -92,15 +96,14 @@ public class LockFreeSet<T> implements Set<T> {
 	public boolean contains(T element) {
 		boolean[] marked = {false};
 		
-		Node curr = head;
+		Node curr = head.next.get(marked);
 		
 		while (curr != tail) {
 			if (comparator.compare(curr.data, element) == 0 && !marked[0]) {
 				return true;
 			}
 			
-			curr = curr.next.getReference();
-			Node succ = curr.next.get(marked);
+			curr = curr.next.get(marked);
 		}
 		
 		return false;
