@@ -1,5 +1,6 @@
 package collections;
 
+import java.util.EmptyStackException;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class UnboundedQueue<T> extends QueuePool<T> {
@@ -16,7 +17,9 @@ public class UnboundedQueue<T> extends QueuePool<T> {
 		enqLock.lock();
 		
 		try {
-			
+			Node e = new Node(item);
+			tail.next = e;
+			tail = e;
 		}
 		finally {
 			enqLock.unlock();
@@ -30,7 +33,12 @@ public class UnboundedQueue<T> extends QueuePool<T> {
 		deqLock.lock();
 		
 		try {
+			if (head.next == null) {
+				throw new EmptyStackException();
+			}
 			
+			result = head.next.value;
+			head = head.next;
 		}
 		finally {
 			deqLock.unlock();
