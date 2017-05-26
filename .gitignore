@@ -58,5 +58,13 @@ hs_err_pid*
 *.out
 *.app
 
+# Program database
+*.pdb
+*.idb
+*.tlog
+
+# vcproj.filters
+*.vcprog.filters
+
 # VS folders
 .vs/
