@@ -62,6 +62,7 @@ hs_err_pid*
 *.pdb
 *.idb
 *.tlog
+*.ilk
 
 # vcxproj.filters
 *.vcxproj.filters
