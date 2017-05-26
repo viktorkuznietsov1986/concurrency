@@ -63,8 +63,8 @@ hs_err_pid*
 *.idb
 *.tlog
 
-# vcproj.filters
-*.vcprog.filters
+# vcxproj.filters
+*.vcxproj.filters
 
 # VS folders
 .vs/
