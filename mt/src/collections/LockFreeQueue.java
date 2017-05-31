@@ -18,8 +18,9 @@ public class LockFreeQueue<T> implements Pool<T> {
 	protected AtomicReference<Node> head, tail;
 	
 	public LockFreeQueue() {
-		head = new AtomicReference<Node>(new Node(null));
-		tail = head;
+		Node n = new Node(null);
+		head = new AtomicReference<Node>(n);
+		tail = new AtomicReference<Node>(n);
 	}
 	
 	@Override
