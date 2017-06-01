@@ -25,6 +25,9 @@ hs_err_pid*
 .metadata/
 .recommenders/
 
+#java bin folder
+.bin/
+
 # Prerequisites
 *.d
 
