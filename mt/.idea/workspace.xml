@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="603d2ced-1add-4b52-ab97-e62b96624eb9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/org_hamcrest_hamcrest_core_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/collections/CourceGrainedSet$Node.class" afterPath="$PROJECT_DIR$/bin/collections/CourceGrainedSet$Node.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/collections/CourceGrainedSet.class" afterPath="$PROJECT_DIR$/bin/collections/CourceGrainedSet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/collections/CourceGrainedSetTest$1.class" afterPath="$PROJECT_DIR$/bin/collections/CourceGrainedSetTest$1.class" />
@@ -88,8 +85,8 @@
       <file leaf-file-name="LockFreeQueueTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/collections/LockFreeQueueTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+            <state relative-caret-position="178">
+              <caret line="45" column="12" lean-forward="false" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -139,16 +136,6 @@
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="mt" />
@@ -665,8 +652,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/collections/LockFreeQueueTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        <state relative-caret-position="178">
+          <caret line="45" column="12" lean-forward="false" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
           <folding />
         </state>
       </provider>
