@@ -2,40 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="603d2ced-1add-4b52-ab97-e62b96624eb9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/collections/CourceGrainedSet$Node.class" afterPath="$PROJECT_DIR$/bin/collections/CourceGrainedSet$Node.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/collections/CourceGrainedSet.class" afterPath="$PROJECT_DIR$/bin/collections/CourceGrainedSet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/collections/CourceGrainedSetTest$1.class" afterPath="$PROJECT_DIR$/bin/collections/CourceGrainedSetTest$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/collections/CourceGrainedSetTest$2.class" afterPath="$PROJECT_DIR$/bin/collections/CourceGrainedSetTest$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/collections/CourceGrainedSetTest$3.class" afterPath="$PROJECT_DIR$/bin/collections/CourceGrainedSetTest$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/collections/CourceGrainedSetTest$4.class" afterPath="$PROJECT_DIR$/bin/collections/CourceGrainedSetTest$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/collections/CourceGrainedSetTest$5.class" afterPath="$PROJECT_DIR$/bin/collections/CourceGrainedSetTest$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/collections/CourceGrainedSetTest$6.class" afterPath="$PROJECT_DIR$/bin/collections/CourceGrainedSetTest$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/collections/CourceGrainedSetTest$7.class" afterPath="$PROJECT_DIR$/bin/collections/CourceGrainedSetTest$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/collections/CourceGrainedSetTest.class" afterPath="$PROJECT_DIR$/bin/collections/CourceGrainedSetTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/collections/Set.class" afterPath="$PROJECT_DIR$/bin/collections/Set.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/locks/Backoff.class" afterPath="$PROJECT_DIR$/bin/locks/Backoff.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/locks/BackoffLock.class" afterPath="$PROJECT_DIR$/bin/locks/BackoffLock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/locks/TASLock.class" afterPath="$PROJECT_DIR$/bin/locks/TASLock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/locks/TTASLock.class" afterPath="$PROJECT_DIR$/bin/locks/TTASLock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/monitors/ReadWriteLock.class" afterPath="$PROJECT_DIR$/bin/monitors/ReadWriteLock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/monitors/Rooms$Handler.class" afterPath="$PROJECT_DIR$/bin/monitors/Rooms$Handler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/monitors/Rooms.class" afterPath="$PROJECT_DIR$/bin/monitors/Rooms.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/monitors/RoomsTest$1.class" afterPath="$PROJECT_DIR$/bin/monitors/RoomsTest$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/monitors/RoomsTest.class" afterPath="$PROJECT_DIR$/bin/monitors/RoomsTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/monitors/SavingsAccount.class" afterPath="$PROJECT_DIR$/bin/monitors/SavingsAccount.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/monitors/SavingsAccountTest$1.class" afterPath="$PROJECT_DIR$/bin/monitors/SavingsAccountTest$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/monitors/SavingsAccountTest$2.class" afterPath="$PROJECT_DIR$/bin/monitors/SavingsAccountTest$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/monitors/SavingsAccountTest.class" afterPath="$PROJECT_DIR$/bin/monitors/SavingsAccountTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/monitors/SharedBathroom.class" afterPath="$PROJECT_DIR$/bin/monitors/SharedBathroom.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/monitors/SharedBathroomLocks.class" afterPath="$PROJECT_DIR$/bin/monitors/SharedBathroomLocks.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/monitors/SharedBathroomObject.class" afterPath="$PROJECT_DIR$/bin/monitors/SharedBathroomObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/monitors/SharedBathroomTest$1.class" afterPath="$PROJECT_DIR$/bin/monitors/SharedBathroomTest$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/monitors/SharedBathroomTest$2.class" afterPath="$PROJECT_DIR$/bin/monitors/SharedBathroomTest$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/monitors/SharedBathroomTest.class" afterPath="$PROJECT_DIR$/bin/monitors/SharedBathroomTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/monitors/SimpleReadWriteLock$ReadLock.class" afterPath="$PROJECT_DIR$/bin/monitors/SimpleReadWriteLock$ReadLock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/monitors/SimpleReadWriteLock$WriteLock.class" afterPath="$PROJECT_DIR$/bin/monitors/SimpleReadWriteLock$WriteLock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/monitors/SimpleReadWriteLock.class" afterPath="$PROJECT_DIR$/bin/monitors/SimpleReadWriteLock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/monitors/SimpleReentrantLock.class" afterPath="$PROJECT_DIR$/bin/monitors/SimpleReentrantLock.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
