@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="603d2ced-1add-4b52-ab97-e62b96624eb9" name="Default" comment="" />
+    <list default="true" id="603d2ced-1add-4b52-ab97-e62b96624eb9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/collections/SynchronousDualQueueTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/collections/OptimisticSet.java" afterPath="$PROJECT_DIR$/src/collections/OptimisticSet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/collections/SynchronousDualQueue.java" afterPath="$PROJECT_DIR$/src/collections/SynchronousDualQueue.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,43 +26,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BoundedQueue.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/collections/BoundedQueue.java">
+      <file leaf-file-name="SynchronousDualQueue.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/collections/SynchronousDualQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="256">
+              <caret line="53" column="25" lean-forward="true" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OptimisticSetTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/collections/OptimisticSetTest.java">
+      <file leaf-file-name="SynchronousDualQueueTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/collections/SynchronousDualQueueTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="62">
+              <caret line="48" column="68" lean-forward="false" selection-start-line="48" selection-start-column="68" selection-end-line="48" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SynchronousQueue.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/collections/SynchronousQueue.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-              <folding>
-                <element signature="e#225#234#0" expanded="true" />
-                <element signature="e#536#545#0" expanded="true" />
-                <element signature="e#1407#1416#0" expanded="true" />
-              </folding>
+              <caret line="6" column="53" lean-forward="true" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LockFreeQueueTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/collections/LockFreeQueueTest.java">
+      <file leaf-file-name="SynchronousQueueTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/collections/SynchronousQueueTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="45" column="12" lean-forward="false" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+            <state relative-caret-position="58">
+              <caret line="39" column="4" lean-forward="true" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -71,6 +87,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$APPLICATION_CONFIG_DIR$/idea.properties" />
+        <option value="$PROJECT_DIR$/src/collections/OptimisticSet.java" />
+        <option value="$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class" />
+        <option value="$PROJECT_DIR$/src/collections/SynchronousDualQueue.java" />
+        <option value="$PROJECT_DIR$/src/collections/SynchronousDualQueueTest.java" />
       </list>
     </option>
   </component>
@@ -96,8 +116,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -167,7 +187,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LockFreeQueueTest">
+  <component name="RunManager" selected="JUnit.SynchronousQueueTest">
     <configuration default="false" name="OptimisticSetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -194,7 +214,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="OptimisticSetTest.testAddSingleThread" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="LockFreeQueueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="collections.*" />
@@ -205,8 +225,60 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="collections" />
-      <option name="MAIN_CLASS_NAME" value="collections.OptimisticSetTest" />
-      <option name="METHOD_NAME" value="testAddSingleThread" />
+      <option name="MAIN_CLASS_NAME" value="collections.LockFreeQueueTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="SynchronousDualQueueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="collections.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="MT" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="collections" />
+      <option name="MAIN_CLASS_NAME" value="collections.SynchronousDualQueueTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="SynchronousDualQueueTest.testSynchronousDualQueue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="collections.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="MT" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="collections" />
+      <option name="MAIN_CLASS_NAME" value="collections.SynchronousDualQueueTest" />
+      <option name="METHOD_NAME" value="testSynchronousDualQueue" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -220,7 +292,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="LockFreeQueueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="SynchronousQueueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="collections.*" />
@@ -231,7 +303,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="collections" />
-      <option name="MAIN_CLASS_NAME" value="collections.LockFreeQueueTest" />
+      <option name="MAIN_CLASS_NAME" value="collections.SynchronousQueueTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -450,16 +522,20 @@
       <listeners />
       <method />
     </configuration>
-    <list size="3">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.OptimisticSetTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.OptimisticSetTest.testAddSingleThread" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.LockFreeQueueTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.LockFreeQueueTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SynchronousDualQueueTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.SynchronousDualQueueTest.testSynchronousDualQueue" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.SynchronousQueueTest" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.LockFreeQueueTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.OptimisticSetTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.OptimisticSetTest.testAddSingleThread" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SynchronousQueueTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SynchronousDualQueueTest.testSynchronousDualQueue" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.SynchronousDualQueueTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.OptimisticSetTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.LockFreeQueueTest" />
       </list>
     </recent_temporary>
   </component>
@@ -477,35 +553,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LockFreeQueueTest - 2017.05.31 at 21h 24m 00s.xml">
-      <configuration name="LockFreeQueueTest" configurationId="JUnit" />
+    <history-entry file="SynchronousDualQueueTest_testSynchronousDualQueue - 2017.06.03 at 14h 05m 34s.xml">
+      <configuration name="SynchronousDualQueueTest.testSynchronousDualQueue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LockFreeQueueTest - 2017.05.31 at 21h 27m 19s.xml">
-      <configuration name="LockFreeQueueTest" configurationId="JUnit" />
+    <history-entry file="SynchronousDualQueueTest_testSynchronousDualQueue - 2017.06.03 at 15h 23m 34s.xml">
+      <configuration name="SynchronousDualQueueTest.testSynchronousDualQueue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LockFreeQueueTest - 2017.05.31 at 21h 30m 04s.xml">
-      <configuration name="LockFreeQueueTest" configurationId="JUnit" />
+    <history-entry file="SynchronousDualQueueTest_testSynchronousDualQueue - 2017.06.03 at 15h 25m 25s.xml">
+      <configuration name="SynchronousDualQueueTest.testSynchronousDualQueue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LockFreeQueueTest - 2017.05.31 at 21h 30m 06s.xml">
-      <configuration name="LockFreeQueueTest" configurationId="JUnit" />
+    <history-entry file="SynchronousDualQueueTest_testSynchronousDualQueue - 2017.06.03 at 15h 28m 26s.xml">
+      <configuration name="SynchronousDualQueueTest.testSynchronousDualQueue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LockFreeQueueTest - 2017.05.31 at 21h 36m 44s.xml">
-      <configuration name="LockFreeQueueTest" configurationId="JUnit" />
+    <history-entry file="SynchronousDualQueueTest_testSynchronousDualQueue - 2017.06.03 at 15h 29m 00s.xml">
+      <configuration name="SynchronousDualQueueTest.testSynchronousDualQueue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OptimisticSetTest - 2017.05.30 at 21h 15m 45s.xml">
-      <configuration name="OptimisticSetTest" configurationId="JUnit" />
+    <history-entry file="SynchronousDualQueueTest_testSynchronousDualQueue - 2017.06.03 at 15h 29m 30s.xml">
+      <configuration name="SynchronousDualQueueTest.testSynchronousDualQueue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OptimisticSetTest - 2017.05.30 at 21h 16m 35s.xml">
-      <configuration name="OptimisticSetTest" configurationId="JUnit" />
+    <history-entry file="SynchronousDualQueueTest_testSynchronousDualQueue - 2017.06.03 at 15h 30m 10s.xml">
+      <configuration name="SynchronousDualQueueTest.testSynchronousDualQueue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OptimisticSetTest - 2017.05.30 at 21h 19m 13s.xml">
-      <configuration name="OptimisticSetTest" configurationId="JUnit" />
+    <history-entry file="SynchronousDualQueueTest_testSynchronousDualQueue - 2017.06.03 at 15h 30m 54s.xml">
+      <configuration name="SynchronousDualQueueTest.testSynchronousDualQueue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OptimisticSetTest - 2017.05.30 at 21h 19m 59s.xml">
-      <configuration name="OptimisticSetTest" configurationId="JUnit" />
+    <history-entry file="SynchronousDualQueueTest_testSynchronousDualQueue - 2017.06.03 at 15h 31m 26s.xml">
+      <configuration name="SynchronousDualQueueTest.testSynchronousDualQueue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OptimisticSetTest_testAddSingleThread - 2017.05.30 at 21h 17m 25s.xml">
-      <configuration name="OptimisticSetTest.testAddSingleThread" configurationId="JUnit" />
+    <history-entry file="SynchronousQueueTest - 2017.06.03 at 15h 31m 49s.xml">
+      <configuration name="SynchronousQueueTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -524,7 +600,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -541,7 +617,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3989726" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -556,7 +632,35 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/collections/SynchronousDualQueue.java</url>
+          <line>79</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/collections/SynchronousDualQueue.java</url>
+          <line>90</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/collections/SynchronousDualQueue.java</url>
+          <line>96</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/collections/SynchronousDualQueue.java</url>
+          <line>117</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="7" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -568,9 +672,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/collections/OptimisticSetTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/collections/LockFreeQueueTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="45" column="12" lean-forward="false" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/collections/BoundedQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -578,11 +704,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#225#234#0" expanded="true" />
-            <element signature="e#536#545#0" expanded="true" />
-            <element signature="e#1407#1416#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -590,9 +712,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -603,22 +723,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/collections/LockFreeQueueTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="45" column="12" lean-forward="false" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/collections/OptimisticSetTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+        <state relative-caret-position="285">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/collections/OptimisticSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="24" column="45" lean-forward="true" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
           <folding>
-            <element signature="e#225#234#0" expanded="true" />
-            <element signature="e#536#545#0" expanded="true" />
-            <element signature="e#1407#1416#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/collections/LockFreeQueueTest.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="45" column="12" lean-forward="false" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+        <state relative-caret-position="100">
+          <caret line="59" column="42" lean-forward="false" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/collections/SynchronousDualQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="53" column="25" lean-forward="true" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/collections/SynchronousQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="53" lean-forward="true" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/collections/SynchronousQueueTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="39" column="4" lean-forward="true" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/collections/SynchronousDualQueueTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="48" column="68" lean-forward="false" selection-start-line="48" selection-start-column="68" selection-end-line="48" selection-end-column="68" />
           <folding />
         </state>
       </provider>
