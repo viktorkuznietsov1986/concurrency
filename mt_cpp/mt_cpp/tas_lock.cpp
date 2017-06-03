@@ -14,9 +14,9 @@ namespace locks {
 
 	void tas_lock::lock() {
 		
-		bool oldValue = locked.load();
+		bool lockValue;
 
-		while(locked.compare_exchange_strong(oldValue, true)) {
+		while(locked.compare_exchange_strong(lockValue, true)) {
 
 		}
 
