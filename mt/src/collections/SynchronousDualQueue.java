@@ -13,7 +13,7 @@ public class SynchronousDualQueue<T> implements Pool<T> {
 		
 		Node(T data, NodeType type) {
 			item = new AtomicReference<T>(data);
-			next = new AtomicReference<Node>(null);
+			next = new AtomicReference<>(null);
 			this.type = type;
 		}
 	}
@@ -46,7 +46,8 @@ public class SynchronousDualQueue<T> implements Pool<T> {
 						
 						while (offer.item.get() == item);
 						
-						h = head.get();
+
+                        h = head.get();
 						
 						if (offer == h.next.get()) {
 							head.compareAndSet(h, offer);
@@ -76,16 +77,59 @@ public class SynchronousDualQueue<T> implements Pool<T> {
 
 	@Override
 	public T get() {
+	    Node offer = new Node(null, NodeType.ITEM);
+
 		while (true) {
 			Node h = head.get();
 			Node t = tail.get();
 			
-			if (h == t) {
-				
+			if (h == t || t.type == NodeType.ITEM) {
+				Node n = h.next.get();
+
+				if (h == head.get()) {
+				    if (n != null) {
+				        T data = n.item.get();
+				        n.item.compareAndSet(data, null);
+				        h.next.compareAndSet(n, n.next.get());
+				        return data;
+                    }
+                    else if (t.next.compareAndSet(n, offer)) {
+				        tail.compareAndSet(t, offer);
+
+				        while (offer.item.get() == null);
+
+				        h = head.get();
+
+				        if (offer == h.next.get()) {
+                            T data = offer.item.get();
+
+                            if (head.compareAndSet(h, offer)) {
+                                offer.item.compareAndSet(data, null);
+                                head.compareAndSet(offer, t);
+
+                                return data;
+                            }
+
+                        }
+                    }
+                }
 			}
 			else {
-				
-			}
+				Node n = h.next.get();
+
+				if (t != tail.get() || h != head.get() || n == null) {
+				    continue;
+                }
+
+                T data = n.item.get();
+
+                if (data != null) {
+                    n.item.compareAndSet(data, null);
+                    head.compareAndSet(h, n);
+                    head.compareAndSet(h, t);
+                    return data;
+                }
+ 			}
 		}
 	}
 

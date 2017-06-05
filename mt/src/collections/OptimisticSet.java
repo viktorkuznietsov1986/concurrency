@@ -1,5 +1,6 @@
 package collections;
 
+import java.io.FileNotFoundException;
 import java.util.Comparator;
 
 public class OptimisticSet<T> implements Set<T> {
