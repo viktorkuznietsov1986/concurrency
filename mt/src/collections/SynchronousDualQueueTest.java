@@ -15,7 +15,7 @@ public class SynchronousDualQueueTest {
         Thread t2 = createSetThread(p, 2);
         Thread t3 = createSetThread(p, 3);
         Thread t4 = createSetThread(p, 4);
-        Thread t5 = createSetThread(p, 5);
+        Thread t5 = createSetThread(p, null);
         Thread t6 = createSetThread(p, 6);
 
         Thread t7 = createGetThread(p);
@@ -40,11 +40,10 @@ public class SynchronousDualQueueTest {
         t10.start();
         t11.start();
         t12.start();
-        //p.set(2);
-        //p.get();
+
     }
 
-    private Thread createSetThread(Pool<Integer> p, int value) {
+    private Thread createSetThread(Pool<Integer> p, Integer value) {
         return new Thread(() -> {
             System.out.println("SynchronousDualQueue.set " + value);
             p.set(value);

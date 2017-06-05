@@ -12,7 +12,7 @@ public class SynchronousDualQueue<T> implements Pool<T> {
 		volatile AtomicReference<Node> next;
 		
 		Node(T data, NodeType type) {
-			item = new AtomicReference<T>(data);
+			item = new AtomicReference<>(data);
 			next = new AtomicReference<>(null);
 			this.type = type;
 		}
@@ -22,8 +22,8 @@ public class SynchronousDualQueue<T> implements Pool<T> {
 	
 	public SynchronousDualQueue() {
 		Node sentinel = new Node(null, NodeType.ITEM);
-		head = new AtomicReference<Node>(sentinel);
-		tail = new AtomicReference<Node>(sentinel);
+		head = new AtomicReference<>(sentinel);
+		tail = new AtomicReference<>(sentinel);
 	}
 	
 
@@ -44,7 +44,7 @@ public class SynchronousDualQueue<T> implements Pool<T> {
 					else if (t.next.compareAndSet(n, offer)) {
 						tail.compareAndSet(t, offer);
 						
-						while (offer.item.get() == item);
+						while (offer.type == NodeType.ITEM);
 						
 
                         h = head.get();
@@ -63,11 +63,17 @@ public class SynchronousDualQueue<T> implements Pool<T> {
 				if (t != tail.get() || h != head.get() || n == null) {
 					continue;
 				}
-				
-				boolean success = n.item.compareAndSet(null, item);
+
+				boolean success = false;
+
+				if (n.type == NodeType.RESERVATION) {
+					success = n.item.compareAndSet(null, item);
+				}
+
 				head.compareAndSet(h,n);
-				
+
 				if (success) {
+					n.type = NodeType.ITEM;
 					return;
 				}
 			}
@@ -77,7 +83,7 @@ public class SynchronousDualQueue<T> implements Pool<T> {
 
 	@Override
 	public T get() {
-	    Node offer = new Node(null, NodeType.ITEM);
+	    Node offer = new Node(null, NodeType.RESERVATION);
 
 		while (true) {
 			Node h = head.get();
@@ -89,14 +95,14 @@ public class SynchronousDualQueue<T> implements Pool<T> {
 				if (h == head.get()) {
 				    if (n != null) {
 				        T data = n.item.get();
-				        n.item.compareAndSet(data, null);
+						n.type = NodeType.RESERVATION;
 				        h.next.compareAndSet(n, n.next.get());
 				        return data;
                     }
                     else if (t.next.compareAndSet(n, offer)) {
 				        tail.compareAndSet(t, offer);
 
-				        while (offer.item.get() == null);
+				        while (offer.type == NodeType.RESERVATION);
 
 				        h = head.get();
 
@@ -104,7 +110,7 @@ public class SynchronousDualQueue<T> implements Pool<T> {
                             T data = offer.item.get();
 
                             if (head.compareAndSet(h, offer)) {
-                                offer.item.compareAndSet(data, null);
+ 								offer.type = NodeType.RESERVATION;
                                 head.compareAndSet(offer, t);
 
                                 return data;
