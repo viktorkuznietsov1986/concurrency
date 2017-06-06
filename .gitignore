@@ -24,6 +24,7 @@ hs_err_pid*
 #java workspace folders
 .metadata/
 .recommenders/
+.idea/
 
 # Prerequisites
 *.d
