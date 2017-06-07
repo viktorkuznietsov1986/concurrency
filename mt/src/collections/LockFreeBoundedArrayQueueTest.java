@@ -3,12 +3,12 @@ package collections;
 import org.junit.Test;
 
 /**
- * Created by evikuzn on 6/5/2017.
+ * Created by evikuzn on 6/7/2017.
  */
-public class BoundedArrayQueueTest {
+public class LockFreeBoundedArrayQueueTest {
     @Test
-    public void testBoundedArrayQueue() {
-        Pool<Integer> p = new BoundedArrayQueue<>(3);
+    public void testLockFreeBoundedArrayQueue() {
+        Pool<Integer> p = new LockFreeBoundedArrayQueue<>(3);
 
         Thread t1 = createSetThread(p, 1);
         Thread t2 = createSetThread(p, 2);
