@@ -1,4 +1,4 @@
-package collections;
+package collections.pool;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;

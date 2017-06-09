@@ -1,4 +1,4 @@
-package collections;
+package collections.set;
 
 import static org.junit.Assert.*;
 

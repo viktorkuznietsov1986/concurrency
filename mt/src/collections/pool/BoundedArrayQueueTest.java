@@ -1,14 +1,14 @@
-package collections;
+package collections.pool;
 
 import org.junit.Test;
 
 /**
- * Created by evikuzn on 6/8/2017.
+ * Created by evikuzn on 6/5/2017.
  */
-public class LockFreeStackTest {
+public class BoundedArrayQueueTest {
     @Test
-    public void testLockFreeStack() {
-        Pool<Integer> p = new LockFreeStack<>();
+    public void testBoundedArrayQueue() {
+        Pool<Integer> p = new BoundedArrayQueue<>(3);
 
         Thread t1 = createSetThread(p, 1);
         Thread t2 = createSetThread(p, 2);
@@ -34,12 +34,12 @@ public class LockFreeStackTest {
 
     private Thread createSetThread(Pool<Integer> p, int value) {
         return new Thread(() -> {
-            System.out.println("LockFreeStack.set " + value);
+            System.out.println("BoundedArrayQueue.set " + value);
             p.set(value);
         });
     }
 
     private Thread createGetThread(Pool<Integer> p) {
-        return new Thread(() -> { System.out.println("LockFreeStack.get " + p.get()); });
+        return new Thread(() -> { System.out.println("BoundedArrayQueue.get " + p.get()); });
     }
 }

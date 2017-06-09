@@ -1,4 +1,4 @@
-package collections;
+package collections.pool;
 
 import java.util.EmptyStackException;
 import java.util.concurrent.atomic.AtomicReference;

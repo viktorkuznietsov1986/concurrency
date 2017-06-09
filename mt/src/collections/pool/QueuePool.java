@@ -1,4 +1,4 @@
-package collections;
+package collections.pool;
 
 public abstract class QueuePool<T> implements Pool<T> {
 	

@@ -1,6 +1,4 @@
-package collections;
-
-import static org.junit.Assert.*;
+package collections.pool;
 
 import org.junit.Test;
 

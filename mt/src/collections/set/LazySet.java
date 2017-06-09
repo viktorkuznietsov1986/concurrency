@@ -1,10 +1,9 @@
-package collections;
+package collections.set;
 
-import java.io.FileNotFoundException;
 import java.util.Comparator;
 
-public class OptimisticSet<T> implements Set<T> {
-	
+public class LazySet<T> implements Set<T> {
+
 	private final Node head, tail;
 	private final Comparator<T> comparator;
 	private volatile int count = 0;
@@ -13,6 +12,7 @@ public class OptimisticSet<T> implements Set<T> {
 		volatile T data;
 		volatile Node next;
 		volatile boolean locked = false;
+		volatile boolean marked = false;
 		
 		synchronized void lock() {
 			try {
@@ -38,7 +38,7 @@ public class OptimisticSet<T> implements Set<T> {
 		}
 	}
 	
-	public OptimisticSet(Comparator<T> comparator) {
+	public LazySet(Comparator<T> comparator) {
 		this.comparator = comparator;
 		head = new Node();
 		tail = new Node();
@@ -48,15 +48,12 @@ public class OptimisticSet<T> implements Set<T> {
 	@Override
 	public boolean add(T element) {
 		while (true) {
-			Node curr = head.next;
 			Node prev = head;
+			Node curr = head.next;
 			
 			while (curr != tail) {
-				if (curr.data.equals(element)) {
-					return false;
-				}
 				
-				if (comparator.compare(curr.data, element) >= 1) {
+				if (comparator.compare(curr.data, element) >= 0) {
 					break;
 				}
 				
@@ -65,114 +62,92 @@ public class OptimisticSet<T> implements Set<T> {
 			}
 			
 			prev.lock();
-			curr.lock();
 			
 			try {
-				if (validate(prev,curr)) {
-					Node a = new Node();
-					a.data = element;
-					prev.next = a;
-					a.next = curr;
-					
-					synchronized(this) {
+				curr.lock();
+				
+				try {
+					if (validate(prev,curr)) {
+						if (curr != tail && curr.data.equals(element)) {
+							return false;
+						}
+						
+						Node n = new Node();
+						n.data = element;
+						prev.next = n;
+						n.next = curr;
 						++count;
+						return true;
 					}
-					
-					return true;
+				}
+				finally {
+					curr.unlock();
 				}
 			}
 			finally {
 				prev.unlock();
-				curr.unlock();
 			}
 		}
-		
 	}
 
 	@Override
 	public boolean contains(T element) {
-		while (true) {
-			Node prev = head;
-			Node curr = head.next;
-			while (curr != tail) {
-				if (comparator.compare(curr.data, element) == 0) {
-					break;
-				}
-				
-				prev = curr;
-				curr = curr.next;
-			}
-			
-			curr.lock();
-			prev.lock();
-			
-			try {
-				if (validate(prev,curr)) {
-					if (curr == tail) {
-						return false;
-					}
-					
-					return comparator.compare(curr.data, element) == 0;
-				}
-			}
-			finally {
-				curr.unlock();
-				prev.unlock();
-			}
-		}
-	}
-
-	@Override
-	public boolean remove(T element) {
-		while (true) {
-			Node curr = head.next;
-			Node prev = head;
-			
-			while (curr != tail) {
-				
-				if (comparator.compare(curr.data, element) == 0) {
-					break;
-				}
-				
-				prev = curr;
-				curr = curr.next;
-			}
-			
-			prev.lock();
-			curr.lock();
-			
-			try {
-				if (validate(prev,curr)) {
-					if (curr == tail) {
-						return false;
-					}
-					
-					prev.next = curr.next;
-					--count;
-					return true;
-				}
-			}
-			finally {
-				prev.unlock();
-				curr.unlock();
-			}
-			
-			
-		}
-	}
-	
-	private boolean validate(Node prev, Node curr) {
-		Node n = head;
+		Node curr = head.next;
 		
-		while (n != tail) {
-			if (n.data == prev.data) {
-				return curr == prev.next;
+		while (curr != tail) {
+			if (comparator.compare(curr.data, element) == 0) {
+				return !curr.marked;
 			}
 			
-			n = n.next;
+			curr = curr.next;
 		}
 		
 		return false;
 	}
 
+	@Override
+	public boolean remove(T element) {
+		while (true) {
+			Node prev = head;
+			Node curr = head.next;
+			
+			while (curr != tail) {
+				if (comparator.compare(curr.data, element) == 0) {
+					break;
+				}
+				
+				prev = curr;
+				curr = curr.next;
+			}
+			
+			prev.lock();
+			
+			try {
+				curr.lock();
+				
+				try {
+					if (validate(prev,curr)) {
+						if (curr == tail) {
+							return false;
+						}
+						
+						curr.marked = true;
+						prev.next = curr.next;
+						--count;
+						return true;
+					}
+				}
+				finally {
+					curr.unlock();
+				}
+			}
+			finally {
+				prev.unlock();
+			}
+		}
+	}
+	
+	private boolean validate(Node prev, Node curr) {
+		return !prev.marked && !curr.marked && prev.next == curr;
+	}
 }

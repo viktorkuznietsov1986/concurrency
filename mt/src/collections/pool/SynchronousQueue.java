@@ -1,4 +1,4 @@
-package collections;
+package collections.pool;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

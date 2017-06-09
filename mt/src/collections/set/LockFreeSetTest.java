@@ -1,4 +1,4 @@
-package collections;
+package collections.set;
 
 import static org.junit.Assert.*;
 
@@ -6,11 +6,11 @@ import java.util.Comparator;
 
 import org.junit.Test;
 
-public class CourceGrainedSetTest {
+public class LockFreeSetTest {
 
 	@Test
 	public void testAddSingleThread() {
-		Set<Integer> s = new CourceGrainedSet<Integer>(new Comparator<Integer>() {
+		Set<Integer> s = new LockFreeSet<Integer>(new Comparator<Integer>() {
 
 			@Override
 			public int compare(Integer o1, Integer o2) {
@@ -27,7 +27,7 @@ public class CourceGrainedSetTest {
 	
 	@Test
 	public void testContains() {
-		Set<Integer> s = new CourceGrainedSet<Integer>(new Comparator<Integer>() {
+		Set<Integer> s = new LockFreeSet<Integer>(new Comparator<Integer>() {
 
 			@Override
 			public int compare(Integer o1, Integer o2) {
@@ -85,7 +85,7 @@ public class CourceGrainedSetTest {
 	
 	@Test
 	public void testRemoveSingleThread() {
-		Set<Integer> s = new CourceGrainedSet<Integer>(new Comparator<Integer>() {
+		Set<Integer> s = new LockFreeSet<Integer>(new Comparator<Integer>() {
 
 			@Override
 			public int compare(Integer o1, Integer o2) {

@@ -1,14 +1,12 @@
-package collections;
-
-import static org.junit.Assert.*;
+package collections.pool;
 
 import org.junit.Test;
 
-public class UnboundedQueueTest {
+public class LockFreeQueueTest {
 
 	@Test
-	public void testUnboundedQueue() {
-		Pool<Integer> p = new UnboundedQueue<Integer>();
+	public void testLockFreeQueue() {
+		Pool<Integer> p = new LockFreeQueue<Integer>();
 		
 		Thread t1 = createSetThread(p, 1);
 		Thread t2 = createSetThread(p, 1);
@@ -34,12 +32,16 @@ public class UnboundedQueueTest {
 	
 	private Thread createSetThread(Pool<Integer> p, int value) {
 		return new Thread(() -> {
+			System.out.println("LockFreeQueue: set" + value);
 			p.set(value);
 		});
 	}
 	
 	private Thread createGetThread(Pool<Integer> p) {
-		return new Thread(() -> { p.get(); });
+		return new Thread(() -> { 
+			System.out.println("LockFreeQueue: get");
+			p.get();
+			});
 	}
 
 

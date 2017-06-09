@@ -1,4 +1,4 @@
-package collections;
+package collections.set;
 
 import java.util.Comparator;
 import java.util.concurrent.locks.Lock;

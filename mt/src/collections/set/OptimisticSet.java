@@ -1,9 +1,9 @@
-package collections;
+package collections.set;
 
 import java.util.Comparator;
 
-public class LazySet<T> implements Set<T> {
-
+public class OptimisticSet<T> implements Set<T> {
+	
 	private final Node head, tail;
 	private final Comparator<T> comparator;
 	private volatile int count = 0;
@@ -12,7 +12,6 @@ public class LazySet<T> implements Set<T> {
 		volatile T data;
 		volatile Node next;
 		volatile boolean locked = false;
-		volatile boolean marked = false;
 		
 		synchronized void lock() {
 			try {
@@ -38,7 +37,7 @@ public class LazySet<T> implements Set<T> {
 		}
 	}
 	
-	public LazySet(Comparator<T> comparator) {
+	public OptimisticSet(Comparator<T> comparator) {
 		this.comparator = comparator;
 		head = new Node();
 		tail = new Node();
@@ -48,12 +47,15 @@ public class LazySet<T> implements Set<T> {
 	@Override
 	public boolean add(T element) {
 		while (true) {
-			Node prev = head;
 			Node curr = head.next;
+			Node prev = head;
 			
 			while (curr != tail) {
+				if (curr.data.equals(element)) {
+					return false;
+				}
 				
-				if (comparator.compare(curr.data, element) >= 0) {
+				if (comparator.compare(curr.data, element) >= 1) {
 					break;
 				}
 				
@@ -62,55 +64,35 @@ public class LazySet<T> implements Set<T> {
 			}
 			
 			prev.lock();
+			curr.lock();
 			
 			try {
-				curr.lock();
-				
-				try {
-					if (validate(prev,curr)) {
-						if (curr != tail && curr.data.equals(element)) {
-							return false;
-						}
-						
-						Node n = new Node();
-						n.data = element;
-						prev.next = n;
-						n.next = curr;
+				if (validate(prev,curr)) {
+					Node a = new Node();
+					a.data = element;
+					prev.next = a;
+					a.next = curr;
+					
+					synchronized(this) {
 						++count;
-						return true;
 					}
-				}
-				finally {
-					curr.unlock();
+					
+					return true;
 				}
 			}
 			finally {
 				prev.unlock();
+				curr.unlock();
 			}
 		}
+		
 	}
 
 	@Override
 	public boolean contains(T element) {
-		Node curr = head.next;
-		
-		while (curr != tail) {
-			if (comparator.compare(curr.data, element) == 0) {
-				return !curr.marked;
-			}
-			
-			curr = curr.next;
-		}
-		
-		return false;
-	}
-
-	@Override
-	public boolean remove(T element) {
 		while (true) {
 			Node prev = head;
 			Node curr = head.next;
-			
 			while (curr != tail) {
 				if (comparator.compare(curr.data, element) == 0) {
 					break;
@@ -120,34 +102,76 @@ public class LazySet<T> implements Set<T> {
 				curr = curr.next;
 			}
 			
+			curr.lock();
 			prev.lock();
 			
 			try {
-				curr.lock();
-				
-				try {
-					if (validate(prev,curr)) {
-						if (curr == tail) {
-							return false;
-						}
-						
-						curr.marked = true;
-						prev.next = curr.next;
-						--count;
-						return true;
+				if (validate(prev,curr)) {
+					if (curr == tail) {
+						return false;
 					}
-				}
-				finally {
-					curr.unlock();
+					
+					return comparator.compare(curr.data, element) == 0;
 				}
 			}
 			finally {
+				curr.unlock();
 				prev.unlock();
 			}
 		}
 	}
+
+	@Override
+	public boolean remove(T element) {
+		while (true) {
+			Node curr = head.next;
+			Node prev = head;
+			
+			while (curr != tail) {
+				
+				if (comparator.compare(curr.data, element) == 0) {
+					break;
+				}
+				
+				prev = curr;
+				curr = curr.next;
+			}
+			
+			prev.lock();
+			curr.lock();
+			
+			try {
+				if (validate(prev,curr)) {
+					if (curr == tail) {
+						return false;
+					}
+					
+					prev.next = curr.next;
+					--count;
+					return true;
+				}
+			}
+			finally {
+				prev.unlock();
+				curr.unlock();
+			}
+			
+			
+		}
+	}
 	
 	private boolean validate(Node prev, Node curr) {
-		return !prev.marked && !curr.marked && prev.next == curr;
+		Node n = head;
+		
+		while (n != tail) {
+			if (n.data == prev.data) {
+				return curr == prev.next;
+			}
+			
+			n = n.next;
+		}
+		
+		return false;
 	}
+
 }
