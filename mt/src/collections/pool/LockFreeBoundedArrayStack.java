@@ -32,8 +32,8 @@ public class LockFreeBoundedArrayStack<T> implements Pool<T> {
 
             boolean succeeded = false;
 
-            if (t == top.get()) {
-                data[top.getAndIncrement()] = item;
+            if (top.compareAndSet(t, t+1)) {
+                data[t] = item;
                 succeeded = true;
             }
 
@@ -59,8 +59,8 @@ public class LockFreeBoundedArrayStack<T> implements Pool<T> {
 
             T result = null;
             boolean succeeded = false;
-            if (t == top.get()) {
-                result = data[top.decrementAndGet()];
+            if (top.compareAndSet(t, t-1)) {
+                result = data[t-1];
                 succeeded = true;
             }
 
