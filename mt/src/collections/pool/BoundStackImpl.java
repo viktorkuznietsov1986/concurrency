@@ -22,6 +22,7 @@ public class BoundStackImpl<T> implements Pool<T> {
 
     private Lock lock = new ReentrantLock();
     private Condition notEnoughPops = lock.newCondition();
+    private Condition notEnoughPush = lock.newCondition();
     private volatile int pushCount = 0;
     private volatile int popCount = 0;
     private final int difference;
@@ -46,6 +47,8 @@ public class BoundStackImpl<T> implements Pool<T> {
 
             ++pushCount;
 
+            notEnoughPush.signalAll();
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
@@ -58,8 +61,8 @@ public class BoundStackImpl<T> implements Pool<T> {
         lock.lock();
 
         try {
-            //if (pushCount-popCount == 0)
-              //  throw new EmptyStackException();
+            while (pushCount-popCount == 0)
+                notEnoughPush.await();
 
             Node n = top;
             top = n.next;
@@ -70,8 +73,12 @@ public class BoundStackImpl<T> implements Pool<T> {
             notEnoughPops.signalAll();
 
             return result;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         } finally {
             lock.unlock();
         }
+
+        return null;
     }
 }
