@@ -19,27 +19,31 @@ public class Rooms {
 	public synchronized void enter(int i) {
 		if (i < 0 && i >= numberOfRooms)
 			throw new IllegalArgumentException();
-		
-		try {
-			while (roomId != i && numberOfThreads > 0) {
+
+		while (roomId != i && numberOfThreads > 0) {
+			try {
 				wait();
 			}
-			
-			while (!exitDone && numberOfThreads == 0) {
+			catch (InterruptedException e) {
+
+			}
+		}
+
+		while (!exitDone && numberOfThreads == 0) {
+			try {
 				wait();
 			}
-			
-			if (numberOfThreads == 0) {
-				exitDone = false;
-				roomId = i;
+			catch (InterruptedException e) {
+
 			}
-			
-			++numberOfThreads;
-			
 		}
-		catch (InterruptedException ex) {
-			
+
+		if (numberOfThreads == 0) {
+			exitDone = false;
+			roomId = i;
 		}
+
+		++numberOfThreads;
 	}
 	
 	public synchronized boolean exit() {
@@ -66,16 +70,17 @@ public class Rooms {
 		if (i < 0 && i >= numberOfRooms)
 			throw new IllegalArgumentException();
 		
-		try {
-			while (roomId != i) {
+		while (roomId != i) {
+			try {
 				wait();
 			}
-			
-			handler = h;
+			catch (InterruptedException e) {
+
+			}
 		}
-		catch (InterruptedException ex) {
-			
-		}
+
+		handler = h;
+
 	}
 
 }

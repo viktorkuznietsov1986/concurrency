@@ -8,7 +8,7 @@ import org.junit.Test;
 public class RoomsStackTest {
     @Test
     public void testRoomsStack() {
-        Pool<Integer> p = new RoomsStack<>(3);
+        Pool<Integer> p = new RoomsStack<>(4);
 
         Thread t1 = createSetThread(p, 1);
         Thread t2 = createSetThread(p, 2);
@@ -34,8 +34,9 @@ public class RoomsStackTest {
 
     private Thread createSetThread(Pool<Integer> p, int value) {
         return new Thread(() -> {
-            System.out.println("RoomsStack.set " + value);
+
             p.set(value);
+            System.out.println("RoomsStack.set " + value);
         });
     }
 

@@ -24,32 +24,35 @@ public class RoomsStack<T> implements Pool<T> {
 
     @Override
     public void set(T item) {
-        rooms.enter(PUSH);
 
-        try {
-            int i = top.getAndIncrement();
+        while (true) {
+            rooms.enter(PUSH);
 
-            if (i >= items.length) {
-                top.getAndDecrement();
+            try {
+                int i = top.getAndIncrement();
 
-                rooms.setExitHandler(PUSH, ()-> {
-                    if (i >= items.length) {
-                        T[] nItems = (T[]) new Object[items.length * 2];
-                        for (int j = 0; j < items.length; ++j) {
-                            nItems[j] = items[j];
+                if (i >= items.length) {
+                    top.getAndDecrement();
+
+                    rooms.setExitHandler(PUSH, () -> {
+                        if (i >= items.length) {
+                            T[] nItems = (T[]) new Object[items.length * 2];
+                            for (int j = 0; j < items.length; ++j) {
+                                nItems[j] = items[j];
+                            }
+
+                            items = nItems;
                         }
+                    });
 
-                        items = nItems;
-                    }
-                });
+                    continue;
+                }
 
+                items[i] = item;
                 return;
+            } finally {
+                rooms.exit();
             }
-
-            items[i] = item;
-        }
-        finally {
-            rooms.exit();
         }
 
 
